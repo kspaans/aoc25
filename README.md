@@ -8,5 +8,7 @@ Working on the problems, and will push solutions here after the day is done.
 - Day 1, Puzzle 2: `cd 1; node rotations-past.js`
 - Day 2, Puzzle 1: `node 2/range.js`
 - Day 2, Puzzle 2: `node 2/at_least_two_range.js`
-- Day 3, Puzzle 1: ``
+- Day 3, Puzzle 1: `node 3/solve.js`
 - Day 3, Puzzle 2: ``
+- Day 4, Puzzle 1: `node 4/solve.js`
+- Day 4, Puzzle 2: ``
