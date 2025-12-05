@@ -5,7 +5,51 @@ function solve(s, t) {
   const l = (m) => {
     if (t) console.log(m)
   }
-  return 1
+  const rows = s.trim().split('\n')
+  const accessible_rolls = 0
+  const height = rows.length
+  const width = rows[0].length
+  let reachable = 0
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      if (rows[y][x] === '.') {
+        continue
+      }
+      let surround_count = 0
+      // 247
+      // 1x6 check in this order
+      // 358
+      if (x > 0) {
+        surround_count += rows[y][x-1] === '@' ? 1 : 0
+        if (y > 0) {
+          surround_count += rows[y-1][x-1] === '@' ? 1 : 0
+        }
+        if (y < (height - 1)) {
+          surround_count += rows[y+1][x-1] === '@' ? 1 : 0
+        }
+      }
+      if (y > 0) {
+        surround_count += rows[y-1][x]   === '@' ? 1 : 0
+      }
+      if (y < (height - 1)) {
+        surround_count += rows[y+1][x]   === '@' ? 1 : 0
+      }
+      if (x < (width - 1)) {
+        surround_count += rows[y][x+1] === '@' ? 1 : 0
+        if (y > 0) {
+          surround_count += rows[y-1][x+1] === '@' ? 1 : 0
+        }
+        if (y < (height - 1)) {
+          surround_count += rows[y+1][x+1] === '@' ? 1 : 0
+        }
+      }
+
+      if (surround_count < 4) {
+        reachable += 1
+      }
+    }
+  }
+  return reachable
 }
 
 const config = {
