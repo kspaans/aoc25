@@ -12,3 +12,5 @@ Working on the problems, and will push solutions here after the day is done.
 - Day 3, Puzzle 2: ``
 - Day 4, Puzzle 1: `node 4/solve.js`
 - Day 4, Puzzle 2: ``
+- Day 5, Puzzle 1: `node 5/solve.js`
+- Day 5, Puzzle 2: ``
