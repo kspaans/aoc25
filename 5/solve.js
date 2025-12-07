@@ -22,27 +22,34 @@ function solve(s, t) {
     }
   }
 
-  let spoiled = 0
-  let i_flag = true
+  let fresh = 0
+  let fresh_flag = false
+  let fresh_range = ''
 
   ingredients_loop: for (const i of ingredients) {
     for (const r of fresh_ranges) {
-      l(`checking for i${i} freshness against ${r}`)
+      //l(`checking for i${i} freshness against ${r}`)
       const [start, end] = r.split('-')
-      if (!((parseInt(start) <= parseInt(i)) && (parseInt(i) <= parseInt(end)))) {
-        if (i_flag) {
-          l(`it's spoiled!`)
-          spoiled += 1
-        }
-        i_flag = false
+      if ((parseInt(start) <= parseInt(i)) && (parseInt(i) <= parseInt(end))) {
+        fresh += 1
+        fresh_flag = true
+        fresh_range = r
+        break
       } else {
-        continue ingredients_loop
+        fresh_flag = false
       }
     }
-    i_flag = true
+    if (!fresh_flag) {
+      l(`it's spoiled!`)
+      //spoiled += 1
+    } else {
+      l(`Ingredient '${i}': certified fresh by ${fresh_range}`)
+    }
+    fresh_flag = false
+    fresh_range = ''
   }
 
-  return spoiled
+  return fresh
 }
 
 const config = {
@@ -52,7 +59,7 @@ const config = {
 const day = '5'
 const TESTS = [
   { filename: 'test.txt', answer: 3},
-  { filename: 'input.txt' },
+  { filename: 'input.txt', answer: true},
 ]
 
 function main() {
