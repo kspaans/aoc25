@@ -20,9 +20,20 @@ export const solve = (s, t) => {
       }
     }
   }
-  //if (t) console.log(rows)
-  //if (t) console.log(column_count)
-  if (t) console.log(columns)
+  let result = 0
+  for (const c of columns) {
+    const operation = c.at(-1)
+    const operands = c.slice(0, -1).map(x => parseInt(x))
+    if (operation === '+') {
+      result += operands.reduce((acc, value) => {
+        return acc + value
+      }, 0)
+    } else if (operation === '*') {
+      result += operands.reduce((acc, value) => {
+        return acc * value
+      }, 1)
+    }
+  }
 
-  return 0
+  return result
 }
