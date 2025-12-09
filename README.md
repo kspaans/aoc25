@@ -14,3 +14,7 @@ Working on the problems, and will push solutions here after the day is done.
 - Day 4, Puzzle 2: ``
 - Day 5, Puzzle 1: `node 5/solve.js`
 - Day 5, Puzzle 2: ``
+- Day 6, Puzzle 1: `node aoc.js 6`
+- Day 7, Puzzle 1: `node aoc.js 7`
+- Day 8, Puzzle 1: `node aoc.js 8`
+- Day 9, Puzzle 1: `node aoc.js 9`
