@@ -2,15 +2,12 @@ import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
 import * as solve_6 from './6/solve.js'
+import * as solve_7 from './7/solve.js'
 
 const config = {
   encoding: 'utf8',
   flag: 'r'
 }
-const TESTS = [
-  { filename: 'test.txt', answer: 3},
-  { filename: 'input.txt', answer: true},
-]
 
 function main() {
   const day = process.argv[2]
@@ -21,6 +18,7 @@ function main() {
   console.log(`Solving AoC Day ${day}`)
   const m = {
     '6': solve_6,
+    '7': solve_7,
   }
   const p = m[day]
 
