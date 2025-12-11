@@ -18,3 +18,6 @@ Working on the problems, and will push solutions here after the day is done.
 - Day 7, Puzzle 1: `node aoc.js 7`
 - Day 8, Puzzle 1: `node aoc.js 8`
 - Day 9, Puzzle 1: `node aoc.js 9`
+- Day 10, Puzzle 1: `node aoc.js 10`
+- Day 11, Puzzle 1: `node aoc.js 11`
+- Day 12, Puzzle 1: `node aoc.js 12`
